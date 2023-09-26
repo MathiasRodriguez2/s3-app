@@ -1,6 +1,6 @@
 
 # Utiliza una imagen base de Python
-FROM python:3.9-slim
+FROM python:3.8-slim-buster-amd64
 
 # Establece un directorio de trabajo
 WORKDIR /app
