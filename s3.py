@@ -3,11 +3,12 @@ import boto3
 
 app = Flask(__name__)
 
-# Especificar el endpoint personalizado y las credenciales
+# Especificar el endpoint personalizado, las credenciales y desactivar la validación SSL
 s3 = boto3.client('s3', 
                   aws_access_key_id='6KCRlvW6KuFYYDYL9HVa', 
                   aws_secret_access_key='9Uo2AGxlRY0xuVKdeZwBZbvlA1IK9L+N+JEYIIwI',
-                  endpoint_url='https://s3.openshift-storage.svc:443')  # Añadir el endpoint aquí
+                  endpoint_url='https://s3.openshift-storage.svc:443',  # Añadir el endpoint aquí
+                  verify=False)  # Desactivar validación SSL
 
 @app.route('/')
 def index():
@@ -23,4 +24,3 @@ def upload():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
-
