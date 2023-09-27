@@ -12,7 +12,7 @@ def index():
 @app.route('/upload', methods=['POST'])
 def upload():
     file = request.files['file']
-    s3.put_object(Bucket='s3.openshift-storage.svc/test-s3-app-bucket-eabc66c6-877d-4070-a3de-9b696377bddd', Key=file.filename, Body=file)
+    s3.put_object(Bucket='s3.openshift-storage.svc:443/test-s3-app-bucket-eabc66c6-877d-4070-a3de-9b696377bddd', Key=file.filename, Body=file)
     return "File uploaded to S3"
 
 if __name__ == "__main__":
