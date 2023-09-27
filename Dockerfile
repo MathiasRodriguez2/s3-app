@@ -1,6 +1,6 @@
 
 # Utiliza una imagen base de Python
-FROM python@sha256:b94af75d4ff65c50bf1b2119bca6d0ba707037bacd0cb75314801a6953c03241
+FROM python
 
 # Establece un directorio de trabajo
 WORKDIR /app
